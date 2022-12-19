@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #eff0f5;
+    /* color: #73777B; */
+    color: #000;
+    letter-spacing:1px
+}
+
+
+.overlay{
+    width: 100%;
+    height: 100vh;
+    background: #435971;
+    z-index: 2;
+    opacity: 0.5;
+    display: none;
+    position: fixed;
+}
+
+.wrapper {
+  position: relative;
+  top: 0;
+  height: 100vh;
+  z-index: 1;
+}
+
+.content-wrapper {
+    padding: 5px 30px 30px 310px;
+    min-height: calc(100vh - 3.8%);
+    transition: 0.3s ease;
+}
+
+.header{
+    background-color:  #fff;
+    box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.1);
+    padding: 1em;
+    margin-bottom: 1.5em;
+}
+
+.sidebar-toggle-close {
+    float: right;
+}
+
+.sidebar-toggle-show, .sidebar-toggle-close, .account-settings{
+    font-size: 25px;
+}
+
+.sidebar-toggle-show, .sidebar-toggle-close {
+    display: none;
+}
+
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.module-name{
+    margin: 0;
+}
+
+.sidebar{
+    left: 0;
+    position: fixed;
+    width: 280px;
+    background-color: #fff;
+    height: 100vh;
+    box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.1);
+    z-index: 999;
+    overflow: auto;
+}
+
+.sidebar-content, .collapsbile{
+    padding: 1em !important;
+}
+
+.sidebar-content {
+    z-index: 998;
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+}
+
+
+.link-content {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.caret-right {
+    font-size: 11px;
+    transition: 0.5s ease-in-out;
+}
+
+.rotate-caret {
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    transition: 0.5s ease-in-out;
+}
+
+.menu-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-links .link-label {
+    color: #000;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.link-title {
+    text-transform: uppercase;
+    font-size: 9px;
+    padding-left: 1em;
+    margin-bottom: 5px;
+    color: #73777B;
+}
+
+.link {
+    text-decoration: none;
+    margin: 0 !important;
+}
+
+.active {
+    /* color: #11cdef !important; */
+    color: #fff !important;
+    background: #11cdef;
+    transition: .3s ease;
+    border-radius: 5px;
+}
+
+.link-icon {
+    margin-right: 10px;
+}
+
+.menu-title {
+    width: 100%;
+    padding: 12px;
+}
+
+.submenu {
+    width: 100%;
+    padding: 0;
+    list-style: none;
+}
+
+.submenu-link {
+    padding: 12px;
+    cursor: pointer;
+    border: solid 1px #000;
+    padding-left: 3em;
+}
+
+input[type="checkbox"]:checked ~ .submenu {
+    max-height: 100%;
+    overflow: auto;
+    transition: transform .53 ease-in;
+    transform: scaleY(1);
+}
+
+input[type="checkbox"] ~ .submenu {
+    max-height: 0;
+    overflow: auto;
+    width: 100%;
+    transition: transform .5s ease-out;
+    transform: scaleY(0);
+}
+
+
+.card-container {
+    background-color:  #fff;
+    box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.1);
+    padding: 1em;
+    border-radius: 5px;
+}
+
+.card-dashboard-content, .card-po-content {
+    align-items: center;
+    display: flex;
+    padding:.6rem;
+}
+
+.card-dashboard-title, .card-po-title{
+    font-size: 11px;
+    margin: 0;
+    color: #73777B;
+}
+
+.card-dashboard-amount, .card-po-amount {
+    font-size: 30px;
+    margin-bottom: -5px;
+    font-weight: 600;
+}
+
+.card-dashboard-icon, .card-po-icon {
+    font-size: 50px;
+    margin-right: 1.5rem;
+}
+
+.card-po-title {
+    margin-bottom: 0;
+}
+
+.apexcharts-legend-marker {
+    border-radius: 100% !important;
+}
+
+.apexcharts-legend-text {
+    font-size: 14px !important;
+}
+
+@media screen and (max-width: 1199px) {
+    .sidebar {
+        left: -100%;
+        transition: .3s ease-in-out;
+    }
+
+    .content-wrapper {
+        padding: 12px;
+    }
+
+    .sidebar-toggle-show, .sidebar-toggle-close{
+        display: block;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        left: -100%;
+    }
+}
+
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #eff0f5 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    max-width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #6B728E;
+    border-radius: 10px;
+    border: 5px solid #ffffff;
+  }
+
